@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form-style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" id="formElem">
+        <div>
+            <input required type="text" id="first-name" name="first-name" placeholder=" " pattern="[A-Z][a-z]+">
+            <label for="first-name">First-name</label>
+        </div>
+
+        <div>
+            <input required type="text" id="last-name" name="last-name" placeholder=" " pattern="[A-Z][a-z]+">
+            <label for="last-name">Last-name</label>
+        </div>
+
+        <div>
+            <input required type="email" id="email" name="email" placeholder=" ">
+            <label for="email">Email</label>
+            <div class="requirements">
+                <p>Must be a valid email address</p>
+            </div>
+        </div>
+
+        <div>
+            <input required type="password" id="password" name="password" placeholder=" " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}">
+            <label for="password">Password</label>
+            <div class="requirements">
+                <p>Your password must consist 6 or more characters(digit, a lowercase letter and a uppercase letter) </p>
+            </div>
+        </div>
+
+        <input type="submit" value="Sign up">
+    </form>
+
+
+
+    <script src="script-form.js"></script>
+</body>
+
+</html>

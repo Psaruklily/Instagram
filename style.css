@@ -1,0 +1,635 @@
+/*specification*/
+
+body {
+    background: #fafafa;
+}
+
+.container {
+    max-width: 975px;
+}
+
+#container {
+    padding: 120px 20px 0px;
+}
+
+
+/*Header*/
+
+.navbar {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container {
+    background: white;
+    display: flex;
+    height: 78px;
+    align-items: center;
+}
+
+.inpute>input {
+    width: 210px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 4px;
+    background: #fafafa;
+}
+
+.inpute>input::placeholder {
+    text-align: center;
+    font-size: 13px;
+    color: rgb(180, 180, 180);
+}
+
+.inpute>input:focus::placeholder {
+    text-align: left;
+}
+
+.button * {
+    color: black;
+    font-size: 23px;
+}
+
+.line {
+    margin: 0px;
+}
+
+#myHeader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border: 1px solid rgb(240, 240, 240);
+    z-index: 1;
+}
+
+
+/*Visibl / invisibl modal window after onclick on the heart*/
+
+#box {
+    width: 510px;
+    height: 363px;
+    background: white;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    display: none;
+    position: absolute;
+    top: 56px;
+    right: 17px;
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 99999;
+}
+
+#box a {
+    text-decoration: none;
+}
+
+.main-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px 13px;
+}
+
+.follow-like {
+    display: flex;
+}
+
+.follower-text {
+    margin: 0px 12px;
+    display: flex;
+    align-items: center;
+}
+
+.follower-text p {
+    font-size: 13px;
+    margin: 0px;
+}
+
+.first-span {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.second-span {
+    font-size: 15px;
+    color: rgb(180, 180, 180);
+}
+
+.line-box {
+    margin: 0;
+    width: 87%;
+    margin-left: auto;
+}
+
+.button-box {
+    width: 73px;
+    height: 32px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    background: #0095f6;
+    border: 1px solid #0095f6;
+    font-weight: bold;
+}
+
+
+/*Information about user*/
+
+.col-md-7 {
+    font-size: 25px;
+}
+
+.col-md-7 .button {
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 5px;
+    padding: 2px 5px;
+    color: black;
+}
+
+.userInfo {
+    width: 400px;
+}
+
+.userInfo * {
+    color: rgb(60, 60, 60);
+    font-size: 15px;
+}
+
+.userInfo a {
+    text-decoration: none;
+}
+
+.col-md-7>.oleh {
+    font-size: 15px;
+}
+
+.col-md-7>.show {
+    font-size: 12px;
+}
+
+
+/*-----------------------------------------------------------------*/
+
+
+/*Open modal window after clock on link "Стежать"*/
+
+#DialogOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#DialogOverlayContent {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -100px;
+    color: #000;
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    z-index: 999999;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 18px;
+}
+
+#DialogOverlayContent>p {
+    color: #000;
+    margin-top: 50px;
+    overflow: auto;
+}
+
+.modal-title {
+    margin-bottom: 17px;
+}
+
+.title-modal-window {
+    display: inline-block;
+    margin: auto;
+    margin-top: 20px;
+    margin-right: -40px;
+}
+
+.close {
+    font-size: 45px;
+    font-weight: 200;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.my-friends {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.my-friends .media-body .user-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: -27px;
+}
+
+.first-name-of-user {
+    font-size: 16px;
+    color: rgb(180, 180, 180);
+}
+
+.btn-followed {
+    width: 115px;
+    height: 31px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/*------------------------------------------------------------------------------*/
+
+
+/*Stories*/
+
+.stories {
+    display: flex;
+    margin: 0 15px;
+}
+
+.stories__column {
+    padding: 0 11px;
+}
+
+.stories__story {
+    /* border: 1px solid black; */
+    padding: 10px 15px;
+    margin-bottom: 48px;
+}
+
+.story__image>img {
+    width: 80px;
+    padding: 2px;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.story__text>p {
+    margin: 0px;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/*Navs*/
+
+.nav-link {
+    text-transform: uppercase;
+    color: rgb(180, 180, 180);
+    font-size: 14px;
+    padding-top: 16px;
+    border-top: 1px solid white;
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+.nav>.nav-item>.active {
+    border-top: 1px solid black;
+    background: #fafafa;
+}
+
+.nav-link:hover {
+    color: rgb(180, 180, 180);
+}
+
+
+/*  a, a:visited { 
+    color: rgb(180, 180, 180 )
+    }
+a.link.active {
+    color:black;
+} */
+
+.d-flex {
+    margin-bottom: 12px;
+}
+
+
+/*Image*/
+
+.image {
+    position: relative;
+}
+
+.image img {
+    width: 293px;
+    height: 293px;
+    margin: 0px 0px 30px;
+}
+
+.image:hover {
+    filter: brightness(70%);
+}
+
+.image:hover .icon-center {
+    visibility: visible;
+}
+
+.icon-center {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+.icon-center>.heart,
+.comment {
+    display: inline-block;
+    padding: 12px;
+}
+
+.heart,
+.comment {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.icon-top-right {
+    position: absolute;
+    right: 30px;
+    top: 13px;
+    font-size: 17px;
+}
+
+.icon-top-right {
+    color: white;
+}
+
+.tab-pane {
+    padding: 0;
+}
+
+
+/*Footer*/
+
+.footer {
+    height: 100px;
+}
+
+.col-lg-1 a {
+    font-size: 15px;
+    text-decoration: none;
+}
+
+
+/*main*/
+
+
+/*friends-stories*/
+
+.friend-stories {
+    border: 1px solid #ccc5c5;
+    width: 610px;
+    height: 115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+.friend-stories a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.image-story img {
+    width: 65px;
+    padding: 2px;
+    border: 2px solid red;
+}
+
+.user-name {
+    font-size: 13px;
+}
+
+.user-name p {
+    text-align: center;
+}
+
+.stories-col {
+    width: 74px;
+    height: 90px;
+    margin: 10px 3px 10px;
+}
+
+
+/*Sidebar*/
+
+.media-body p small {
+    color: rgb(151, 145, 145);
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.paragraph_1 p {
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(151, 145, 145);
+}
+
+.flexbox a {
+    text-decoration: none;
+}
+
+.paragraph_2 p {
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+
+.sidebar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -1;
+}
+
+.sidebar-content a {
+    text-decoration: none;
+}
+
+.follow p {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(50, 182, 235);
+}
+
+.media-body p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.media-body a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.sidebar {
+    height: 100%;
+    width: 291.66px;
+    position: fixed;
+    z-index: 1;
+    top: 120px;
+    right: 154.5px;
+    overflow-x: hidden;
+}
+
+
+/*News-of-my-friends*/
+
+.main-div {
+    margin: 50px 0px 0px;
+}
+
+.title {
+    width: 610px;
+    height: 60px;
+    border: 1px solid #ccc5c5;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title .media .media-body a {
+    font-size: 14px;
+}
+
+.icon a {
+    margin: 16px;
+    color: rgb(0, 0, 0);
+}
+
+
+/*Modal window*/
+
+.modal-content {
+    border-radius: 20px;
+}
+
+.modal-dialog {
+    width: 450px;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.modal-body a {
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.modal-body .text-red {
+    color: red;
+    font-weight: bold;
+}
+
+.news img {
+    width: 610px;
+    height: 509px;
+}
+
+.image-description {
+    border: 1px solid #ccc5c5;
+    padding: 16px;
+}
+
+.image-description .nav-link {
+    padding: 0px;
+    padding-right: 16px;
+}
+
+.image-description .nav-link .fa-bookmark {
+    margin-left: 413px;
+}
+
+
+/* .image-description .fa-comment {
+    color: red;
+} */
+
+.brief-description a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.second-part {
+    font-size: 14px;
+    display: inline;
+}
+
+.third-part {
+    font-size: 49px;
+    color: red;
+}
+
+.line_1 {
+    background: #000;
+    width: 100px;
+    margin-bottom: 5px;
+}
+
+.add-comment {
+    border: 1px solid #ccc5c5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+.add-comment textarea {
+    width: 600px;
+    height: 65px;
+    padding: 15px;
+    resize: none;
+}
+
+.add-comment textarea:focus {
+    outline: none;
+}
+
+.add-comment a {
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(50, 182, 235);
+    background: white;
+}
+
+.add-comment a:disabled {
+    color: rgb(197, 230, 243);
+}
