@@ -112,15 +112,15 @@ function closeDialog() {
 }
 
 
-
+let containerRandomImages1 = document.querySelector('.containerRandomImages1');
 let containerRandomImages = document.querySelector('.containerRandomImages');
-async function getRandomImages() {
+async function getRandomImages(container) {
     let response = await fetch('https://random.dog/woof.json');
     let result = await response.json();
     console.log(result);
     let image = document.createElement('img');
     image.src = result['url'];
-    containerRandomImages.innerHTML += `
+    container.innerHTML += `
     <div class="col-md-4 image">
     <a target="_self" href="${result['url']}">
         <img src="${result['url']}"
@@ -142,5 +142,9 @@ async function getRandomImages() {
 }
 
 for (let i = 0; i < 40; i++) {
-    getRandomImages();
+    getRandomImages(containerRandomImages);
+}
+
+for (let i = 0; i < 40; i++) {
+    getRandomImages(containerRandomImages1);
 }
