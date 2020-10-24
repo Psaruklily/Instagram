@@ -138,7 +138,7 @@ async function getInfoAboutRandomUsers(callback) {
 
 
 getInfoAboutRandomUsers(boxUsersAfterClickOnHeart);
-
+getInfoAboutRandomUsers(sidebarAfterClickOnLogoInstagram);
 
 
 function boxUsersAfterClickOnHeart(result) {
@@ -165,5 +165,34 @@ function boxUsersAfterClickOnHeart(result) {
 </a>
 <hr class="line-box">
     `
+    }
+}
+
+
+function sidebarAfterClickOnLogoInstagram(result) {
+
+    let randomUsers = result.results.slice(0, 5);
+    console.log(randomUsers);
+    let recommendationsFriends = document.querySelector('.recommendations');
+    console.log(recommendationsFriends)
+    for (let user of randomUsers) {
+        recommendationsFriends.innerHTML += `
+        <div class="sidebar-content">
+        <div class="media p-1">
+            <a href="#">
+                <img src="${user.picture.large}" alt="user"
+                    class="mr-3 rounded-circle" style="width:35px;">
+            </a>
+            <div class="media-body">
+                <p><a href="#">${user.name.first + user.name.last}</a><br><small>Стежить за вами</small></p>
+            </div>
+        </div>
+        <a href="#">
+            <div class="follow">
+                <p>Стежити</p>
+            </div>
+        </a>
+    </div>
+        `
     }
 }
