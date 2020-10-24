@@ -3,7 +3,6 @@
 let logoInstagram = document.querySelector('.logo-Instagram');
 let container = document.getElementById('container');
 let mainContent = document.getElementById('main-content');
-/*event*/
 logoInstagram.onclick = changeContent;
 
 function changeContent() {
@@ -16,7 +15,6 @@ function changeContent() {
 /*get link and contents*/
 let iconUser = document.querySelector('.icon-user');
 let aboutUser = document.getElementById('about-user');
-/*event*/
 iconUser.onclick = goToProfile;
 
 function goToProfile() {
@@ -27,58 +25,39 @@ function goToProfile() {
 
 // EVENTS ON THE HEART
 let heart = document.getElementsByClassName('far fa-heart')[0];
-console.log(heart);
 
 heart.addEventListener('click', fillHeart); //FILLING OG THE HEARTS BY THE COLOR
 heart.addEventListener('click', openBox); // Visibl / invisibl div after onclick on the heart 
 
 function fillHeart(icon) {
     this.classList.toggle("fas");
-    console.log("1")
 }
 
 function openBox(box) {
-    console.log("2")
     display = document.getElementById('box').style.display;
     if (heart.classList.contains("fas")) {
-        console.log("3")
         document.getElementById('box').style.display = "block";
     } else {
-        console.log("4")
         document.getElementById('box').style.display = "none";
     }
 }
 
 
 window.addEventListener('mouseup', function(event) {
-    console.log("5")
     let box = this.document.getElementById('box');
     if (event.target !== box && event.target.parentNode !== box && event.target !== heart) {
         box.style.display = "none";
-        console.log("6")
         if (heart.classList.contains("fas")) {
             heart.classList.toggle("fas");
-            console.log("7")
         }
     }
 });
 
 
-// && event.target !== heart
-
-
 /*FILLING OG THE HEARTS BY THE COLOR (like-heart)*/
-
 function fillLikeHeart(icon) {
     icon.classList.toggle("fas");
 }
-
-
-/*ENABLED / DISABLED BUTTON IN THE COMMENT (after focus textarea)*/
-/* function enableBtn() {
-  document.getElementById("myBtn").disabled = false;
-}  */
-
 
 
 /*ENABLED / DISABLED BUTTON IN THE COMMENT (after entered text into textarea)*/
@@ -117,7 +96,6 @@ let containerRandomImages = document.querySelector('.containerRandomImages');
 async function getRandomImages(container) {
     let response = await fetch('https://random.dog/woof.json');
     let result = await response.json();
-    console.log(result);
     let image = document.createElement('img');
     image.src = result['url'];
     container.innerHTML += `
@@ -147,4 +125,45 @@ for (let i = 0; i < 40; i++) {
 
 for (let i = 0; i < 40; i++) {
     getRandomImages(containerRandomImages1);
+}
+
+//----------------------------------------------------------------------------------------------------------------
+
+
+async function getInfoAboutRandomUsers(callback) {
+    let response = await fetch('https://randomuser.me/api/?inc=gender,name,picture&results=10');
+    let result = await response.json();
+    callback(result);
+}
+
+
+getInfoAboutRandomUsers(boxUsersAfterClickOnHeart);
+
+
+
+function boxUsersAfterClickOnHeart(result) {
+    let boxAfterClHeart = document.querySelector('#box');
+
+    for (let i = 0; i < result.results.length; i++) {
+        boxAfterClHeart.innerHTML += `
+    <a href="#">
+    <div class="main-box">
+        <div class="follow-like">
+            <div class="follower-photo">
+                <img src="${result.results[i].picture.large}"
+                    class="rounded-circle" width="40px" alt="#">
+            </div>
+            <div class="follower-text">
+                <p>Користувачу <span class="first-span">${result.results[i].name.first + result.results[i].name.last}</span> подобається ваша світлина. <span class="second-span">1 д.</span></p>
+            </div>
+        </div>
+        <div class="image-like_or_button">
+            <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/29740323_930001410515401_1383917765047353344_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=1e8kS7z11RUAX-ZNVea&_nc_tp=24&oh=720c22f0a4bb57dbfbb33dc184804c46&oe=5FBE9145"
+                width="43px" alt="#">
+        </div>
+    </div>
+</a>
+<hr class="line-box">
+    `
+    }
 }
